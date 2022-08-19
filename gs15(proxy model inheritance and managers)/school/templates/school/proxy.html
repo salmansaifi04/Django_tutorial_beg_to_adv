@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Model Inheritance</title>
+</head>
+
+<body>
+    <h1>Proxy Model Inheritance</h1>
+    <hr>
+    {% if exam_centers %}
+    <h1>All center record - original</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Center Name</td>
+            <td>City</td>
+        </thead>
+        <tbody>
+            {% for i in exam_centers %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.cname}}</td>
+                <td>{{i.city}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    <br><br>
+    <hr>
+    {% if my_exam_centers %}
+    <h1>All center record (sort by city name) - proxy</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Center Name</td>
+            <td>City</td>
+        </thead>
+        <tbody>
+            {% for i in my_exam_centers %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.cname}}</td>
+                <td>{{i.city}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    <br><br>
+    <hr>
+    {% if custom_centers %}
+    <h1>All center record (sort by city name using 'managers.py' ) - proxy</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Center Name</td>
+            <td>City</td>
+        </thead>
+        <tbody>
+            {% for i in custom_centers %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.cname}}</td>
+                <td>{{i.city}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+
+</html>

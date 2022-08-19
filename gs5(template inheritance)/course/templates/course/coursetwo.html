@@ -1,0 +1,15 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %} {{block.super}} | Python {% endblock title %}
+{% block style %}{{block.super}}<link rel="stylesheet" href="{% static 'course/css/course.css' %}"> {% endblock style %}
+{% block body %}
+<h1>Python</h1>
+{% if cname == 'Python' and duration == '4 Months' and seats == 10 %}
+<h3>
+Course Name : {{cname}}<br>
+Course duration : {{duration}}<br>
+Seats left : {{seats}}<br>
+</h3>
+{% endif %}
+
+{% endblock body %}

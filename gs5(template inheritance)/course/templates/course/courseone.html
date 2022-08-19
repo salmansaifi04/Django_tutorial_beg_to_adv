@@ -1,0 +1,27 @@
+{% extends 'mainapp/base.html' %}
+{% block title %} {{block.super}} | Django {% endblock title %}
+{% block body %}
+<h1>All student record</h1>
+{% comment %} {{students}}<br>
+{{students.stu1}}<br>
+{{students.stu1.name}}<br>
+{{students.stu1.roll}}<br>
+{{students.stu2}}<br>
+{{students.stu2.name}}<br>
+{{students.stu2.roll}}<br>
+{{students.stu3}}<br>
+{{students.stu3.name}}<br>
+{{students.stu3.roll}}<br> {% endcomment %}
+{% for key, value in students.items %}
+{{key}} : {{value}}<br>
+{% for k,v in value.items %}
+{{k|upper}} : {{v}}<br>
+{% endfor %}
+
+
+{% endfor %}
+
+
+
+
+{% endblock body %}

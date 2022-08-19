@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+
+<body>
+    <h1>Model and Admin</h1>
+    {% if stu %}
+    <h2>Student Data</h2>
+    <table border=1>
+        <thead>
+            <td>StuId</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>roll</td>
+        </thead>
+    {% for i in stu %}
+        <tr>
+            <td>{{i.stuid}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.roll}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h2>No data</h2>
+    {% endif %}
+</body>
+
+</html>

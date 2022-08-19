@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Url Home page</title>
+</head>
+
+<body>
+<h1>This is a home page </h1>
+<h1>Student</h1>
+<a href="{% url 'show' 1 %}">Salman</a>
+<a href="{% url 'show' 2 %}">Suraj</a>
+<a href="{% url 'show' 3 %}">Prakash</a>
+
+<h1>Sub Student</h1>
+<a href="{% url 'subshow' 1 5 %}">Salman</a>
+<a href="{% url 'subshow' 2 6 %}">Suraj</a>
+<a href="{% url 'subshow' 3 7 %}">Prakash</a>
+
+</body>
+
+</html>

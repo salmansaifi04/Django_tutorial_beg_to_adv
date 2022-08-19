@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One to One Relationship</title>
+</head>
+
+<body>
+    
+    {% if messages %} {% for i in messages %}
+    <p>{{i}}</p>
+    {% endfor %} {% endif %}
+    <h1>One to One Relationship</h1>
+    <hr> {% if pages %}
+    <h1>All Pages List</h1>
+    <table border="1">
+        <thead>
+            <tr style="font-weight:900;">
+                <td>User Name</td>
+                <td>Page Name</td>
+                <td>Page Category</td>
+                <td>Page Publish Date</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in pages %}
+            <tr>
+                <td>{{i.user}}</td>
+                <td>{{i.page_name}}</td>
+                <td>{{i.page_cat}}</td>
+                <td>{{i.page_publish_date}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1>No Data</h1>
+    {% endif %}
+</body>
+
+</html>

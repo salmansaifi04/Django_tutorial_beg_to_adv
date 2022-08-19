@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1>This is a profile page</h1>
+    <p>welcome {{name}}<p>
+    {% if messages %}
+    {% for i in messages %}
+    <h3>{{i}}</h3>
+    {% endfor %}
+    {% endif %}
+
+    {% if users != None %}
+    <hr><hr>
+    <h3>List of all Users</h3>
+    {% for i in users %}
+    {% comment %} {{i.username}}<br><br> {% endcomment %}
+    <a href="{% url 'userdetail' i.id %}">{{i.username}}</a><br><br>
+    {% endfor %}
+    <hr>
+    {% endif %}
+
+<hr>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+            {% for i in form.non_field_errors %}
+            <p>{{i}}</p>
+            {% endfor %}
+        {% endif %}
+
+        {% for i in form %}
+        {{i.label_tag}}{{i}}{{i.errors|striptags}}<br><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+<hr><hr>
+    <a href="{% url 'logout' %}">logout</a><br><br>
+    <a href="{% url 'changepass' %}">Change password with old password</a><br><br>
+    <a href="{% url 'changepass1' %}">Change password without old password</a><br><br>
+</body>
+
+</html>

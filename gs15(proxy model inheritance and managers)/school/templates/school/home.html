@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Model Inheritance</title>
+</head>
+
+<body>
+    <h1>Proxy Model Inheritance</h1>
+    <hr>
+    {% if students %}
+    <h1>All Student record (using 'objects') - original</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Roll</td>
+        </thead>
+        <tbody>
+            {% for i in students %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.roll}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    <br><br>
+    <hr>
+    {% if stu_manager %}
+    <h1>All Students record (using 'manager.py' )</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Roll</td>
+        </thead>
+        <tbody>
+            {% for i in stu_manager %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.roll}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    <br><br>
+    <hr>
+    {% if stu_roll %}
+    <h1>All Students record (using 'manager.py' - roll no )</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Roll</td>
+        </thead>
+        <tbody>
+            {% for i in stu_roll %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.roll}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+
+</html>

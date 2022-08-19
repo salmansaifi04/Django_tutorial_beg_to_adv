@@ -1,0 +1,44 @@
+{% extends 'crud/base.html' %}
+{% block body %}
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<hr>
+<h1>Student record</h1>
+{% if stu %}
+<table border=1>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Action1</td>
+            <td>Action2</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in stu %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td><a href="{% url 'update' i.id %}">Edit</a></td>
+            <td>
+                <form method="POST" action="{% url 'delete' i.id %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h4>No record<h4>
+{% endif %}
+
+{% endblock %}

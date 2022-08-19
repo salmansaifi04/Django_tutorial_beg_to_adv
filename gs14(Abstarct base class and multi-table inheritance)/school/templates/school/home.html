@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Base Classes</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Abstract Base Class Model Inhertiance</h1>
+    <hr> {% if students %}
+    <h1>List of all Students</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Fees</td>
+        </thead>
+        <tbody>
+            {% for i in students %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.fees}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %} {% if teachers %}
+    <h1>List of all Teachers</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Date</td>
+            <td>Fees</td>
+        </thead>
+        <tbody>
+            {% for i in teachers %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.salary}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %} {% if con %}
+    <h1>List of all Contractors</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Date and Time</td>
+            <td>Payment</td>
+        </thead>
+        <tbody>
+            {% for i in con %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.payment}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+<br><br>
+    <hr><hr>
+    <h1 style="text-align: center;">Mutli-table Model Inhertiance</h1>
+    <hr> {% if exam_centers %}
+    <h1>List of all Exam-Center</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Center Name</td>
+            <td>City</td>
+        </thead>
+        <tbody>
+            {% for i in exam_centers %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.cname}}</td>
+                <td>{{i.city}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    {% if my_exam_centers %}
+    <h1>List of all My Exam Centers</h1>
+    <table border="1">
+        <thead>
+            <td>Id</td>
+            <td>Center Name</td>
+            <td>City</td>
+            <td>Name</td>
+            <td>Roll</td>
+        </thead>
+        <tbody>
+            {% for i in my_exam_centers %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.cname}}</td>
+                <td>{{i.city}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.roll}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    <br><br>
+    <hr><hr>
+
+</body>
+
+</html>
